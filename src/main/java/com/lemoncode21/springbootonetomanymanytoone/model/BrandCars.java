@@ -32,7 +32,7 @@ public class BrandCars {
     private String name;
     @Column(name = BrandCars.CREATED_AT)
     private Date createAt = new Date();
-    @OneToMany(mappedBy = ModelCars.TABLE_NAME, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(targetEntity=ModelCars.class,mappedBy = "brandCars", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ModelCars> modelCars;
 
 }
